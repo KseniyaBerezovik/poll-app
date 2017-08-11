@@ -1,7 +1,6 @@
 package by.test.poll.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.internal.Nullable;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
