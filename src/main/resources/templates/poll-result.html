@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script src="/js/functions.js"></script>
+</head>
+<body>
+
+<div class="pageContent">
+    <div class="col-lg-5 col-lg-offset-3">
+        <h3 th:text="'Результаты опроса: ' + ${poll.title}"></h3>
+        <table class="table table-striped table-bordered indent">
+            <tbody>
+            <tr th:each="option : ${options}">
+                <td th:text="${option.content}"></td>
+                <td th:text="${option.numberOfVoters}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>Опрос закрыт.</h3>
+        <a th:href="@{/polls}" class="btn btn-default">На главную</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Poll info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script src="/js/functions.js"></script>
+</head>
+<body>
+<div class="pageContent">
+    <div class="col-lg-5 col-lg-offset-3">
+        <h3 th:text="${poll.title}"></h3>
+        <div th:each="option : ${pollOption}">
+            <div class="checkbox">
+                <label>
+                    <input class="voteItems"
+                           type="checkbox"
+                           th:value="${option.id}"
+                           th:text="${option.content}"/>
+                </label>
+            </div>
+        </div>
+        <button class="btn btn-success" type="button" onclick="vote()">Голосовать</button>
+    </div>
+</div>
+</body>
+</html>
