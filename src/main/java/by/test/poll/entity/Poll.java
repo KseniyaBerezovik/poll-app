@@ -15,7 +15,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class Poll {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
